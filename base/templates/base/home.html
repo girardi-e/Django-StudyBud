@@ -5,6 +5,8 @@
 
     <div>
         <div>
+            <a href="{% url 'create-room'%}">CREATE NEW ROOM</a>
+            <hr>
             {% for room in rooms %}
                 <div>
                     <span>@{{ room.host.username }}</span>
