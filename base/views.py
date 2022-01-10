@@ -26,3 +26,13 @@ def create_room(request):
 
     context = {"form": form}
     return render(request, 'base/room_form.html', context)
+
+
+def update_room(request, pk):
+    # get the room we want to update
+    room = Room.objects.get(id=pk)
+    # pre-fill the form with data from the room
+    form = RoomForm(instance=room)
+
+    context = {"form": form}
+    return render(request, 'base/room_form.html', context)
